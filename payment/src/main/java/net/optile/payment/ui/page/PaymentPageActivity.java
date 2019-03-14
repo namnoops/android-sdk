@@ -299,7 +299,7 @@ public final class PaymentPageActivity extends AppCompatActivity implements Paym
         if (!result.isError()) {
             return result;
         }
-        String msg = card.getLang().translateError(result.getError());
+        String msg = card.getLang().getError(result.getError());
 
         if (TextUtils.isEmpty(msg)) {
             msg = getString(R.string.pmpage_error_validation);

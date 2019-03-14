@@ -5,13 +5,7 @@
     <string name="pmpage_error_validation">Invalid input value</string>
     <string name="pmpage_contentdescription">PaymentImage</string>
 
-    <string name="pmlist_preset_header">Previously selected account</string>
-    <string name="pmlist_preset_info">Unless authorized previously, this account is not saved or retained at the end of the payment
-        session.
-    </string>
     <string name="pmlist_subtitle_date">%1$02d / %2$d</string>
-    <string name="pmlist_account_header">Saved accounts</string>
-    <string name="pmlist_network_header">Choose another account</string>
     <string name="pmlist_networkonly_header">Choose a method</string>
     <string name="pmlist_widget_date">%1$s / %2$s</string>
 
@@ -23,7 +17,6 @@
     <string name="pmdialog_error_unknown">An error occurred while handling your payment.</string>
     <string name="pmdialog_cancel_button">Cancel</string>
     <string name="pmdialog_retry_button">Retry</string>
-
 
     <string name="pmsnackbar_operation_interrupted">Please wait for the payment to process.</string>
 </resources>

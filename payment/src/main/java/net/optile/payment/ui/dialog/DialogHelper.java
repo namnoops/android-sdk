@@ -57,8 +57,8 @@ public class DialogHelper {
     public static MessageDialogFragment createHintDialog(PaymentCard card, String type, String button) {
         LanguageFile lang = card.getLang();
         MessageDialogFragment dialog = new MessageDialogFragment();
-        dialog.setTitle(lang.translateAccountHint(type, LanguageFile.TITLE));
-        dialog.setMessage(lang.translateAccountHint(type, LanguageFile.TEXT));
+        dialog.setTitle(lang.getAccountHint(type, LanguageFile.TITLE));
+        dialog.setMessage(lang.getAccountHint(type, LanguageFile.TEXT));
         dialog.setImageResId(getHintImageResId(card, type));
         dialog.setNeutralButton(button);
         return dialog;

@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import net.optile.payment.R;
+import net.optile.payment.core.LanguageFile;
 import net.optile.payment.model.AccountMask;
 import net.optile.payment.ui.model.PaymentCard;
 import net.optile.payment.ui.model.PresetCard;
@@ -62,7 +63,9 @@ final class PresetCardViewHolder extends PaymentCardViewHolder {
         bindMaskedTitle(title, mask, card.getPaymentMethod());
         bindMaskedSubTitle(subTitle, mask);
         bindLogoView(card.getCode(), card.getLink("logo"), true);
-        bindLabelWidget(adapter.getContext().getString(R.string.pmlist_preset_info));
+
+        LanguageFile lang = adapter.getPageLanguageFile();
+        bindLabelWidget(lang.translate("networks.preset.text", null));
     }
 
 }

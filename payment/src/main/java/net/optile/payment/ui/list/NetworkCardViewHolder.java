@@ -118,7 +118,7 @@ final class NetworkCardViewHolder extends PaymentCardViewHolder {
         widget.setRegistrationType(network.getRegistration());
 
         LanguageFile lang = adapter.getPageLanguageFile();
-        widget.setLabel(lang.translate(LanguageFile.KEY_AUTO_REGISTRATION, null));
+        widget.setLabel(lang.translate("autoRegistrationLabel", null));
     }
 
     private void bindRecurrenceWidget(PaymentNetwork network) {
@@ -126,7 +126,7 @@ final class NetworkCardViewHolder extends PaymentCardViewHolder {
         widget.setRegistrationType(network.getRecurrence());
 
         LanguageFile lang = adapter.getPageLanguageFile();
-        widget.setLabel(lang.translate(LanguageFile.KEY_ALLOW_RECURRENCE, null));
+        widget.setLabel(lang.translate("allowRecurrenceLabel", null));
     }
 
     private void initTextSwitcher(final View parent, final PaymentTheme theme) {

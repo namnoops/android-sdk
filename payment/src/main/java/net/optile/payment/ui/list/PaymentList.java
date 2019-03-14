@@ -136,7 +136,7 @@ public final class PaymentList {
         ListItem item = items.get(position);
 
         if (item.hasPaymentCard()) {
-            String button = session.getLang().translate(LanguageFile.KEY_BUTTON_BACK);
+            String button = session.getLang().getButtonLabel(LanguageFile.BUTTON_BACK);
             DialogFragment dialog = DialogHelper.createHintDialog(item.getPaymentCard(), type, button);
             showDialogFragment(dialog, "hint_dialog");
         }
@@ -197,16 +197,17 @@ public final class PaymentList {
         int index = 0;
         int accountSize = session.accounts.size();
         int networkSize = session.networks.size();
-
+        LanguageFile lang = session.getLang();
+        
         if (session.presetCard != null) {
-            items.add(new HeaderItem(nextViewType(), activity.getString(R.string.pmlist_preset_header)));
+            items.add(new HeaderItem(nextViewType(), lang.translate("networks.preset.title")));
             items.add(new PaymentCardItem(nextViewType(), session.presetCard));
             this.selIndex = 1;
             index += 2;
         }
 
         if (accountSize > 0) {
-            items.add(new HeaderItem(nextViewType(), activity.getString(R.string.pmlist_account_header)));
+            items.add(new HeaderItem(nextViewType(), lang.translate("savedAccountsLabel")));
             index++;
         }
         for (AccountCard card : session.accounts) {
@@ -217,8 +218,11 @@ public final class PaymentList {
             index++;
         }
         if (networkSize > 0) {
-            int resId = accountSize == 0 ? R.string.pmlist_networkonly_header : R.string.pmlist_network_header;
-            items.add(new HeaderItem(nextViewType(), activity.getString(resId)));
+            // NOTE: the network only header still comes from the strings.xml unless added to the
+            // translation files.
+            String header = accountSize == 0 ? activity.getString(R.string.pmlist_networkonly_header) :
+                lang.translate("addNewAccountLabel");
+            items.add(new HeaderItem(nextViewType(), header));
         }
         for (NetworkCard card : session.networks) {
             items.add(new PaymentCardItem(nextViewType(), card));

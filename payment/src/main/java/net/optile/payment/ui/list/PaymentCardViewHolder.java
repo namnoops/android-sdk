@@ -317,8 +317,8 @@ abstract class PaymentCardViewHolder extends RecyclerView.ViewHolder {
         widget.setMonthInputElement(card.getInputElement(PaymentInputType.EXPIRY_MONTH));
         widget.setYearInputElement(card.getInputElement(PaymentInputType.EXPIRY_YEAR));
 
-        widget.setLabel(card.getLang().translateAccountLabel(name));
-        widget.setDialogButtonLabel(pageLang.translate(LanguageFile.KEY_BUTTON_UPDATE));
+        widget.setLabel(card.getLang().getAccountLabel(name));
+        widget.setDialogButtonLabel(pageLang.getButtonLabel(LanguageFile.BUTTON_UPDATE));
     }
 
     void bindButtonWidget(PaymentCard card) {

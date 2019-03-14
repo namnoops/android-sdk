@@ -18,11 +18,8 @@ import net.optile.payment.model.Interaction;
  */
 public final class LanguageFile {
 
-    public final static String KEY_BUTTON_UPDATE = "button.update.label";
-    public final static String KEY_BUTTON_BACK = "button.back.label";
-    public final static String KEY_AUTO_REGISTRATION = "autoRegistrationLabel";
-    public final static String KEY_ALLOW_RECURRENCE = "allowRecurrenceLabel";
-
+    public final static String BUTTON_UPDATE = "update";
+    public final static String BUTTON_BACK = "back";
     public final static String TITLE = "title";
     public final static String TEXT = "text";
     private final Properties lang;
@@ -42,27 +39,30 @@ public final class LanguageFile {
         return key != null ? lang.getProperty(key, defValue) : defValue;
     }
 
-    public String translateError(String error) {
-        return translate("error.".concat(error));
-    }
-
-    public String translateAccountLabel(String account) {
-        return translate("account.".concat(account).concat(".label"));
-    }
-
-    public String translateAccountHint(String account, String type) {
-        String key = "account.".concat(account).concat(".").concat("hint.").concat("where.").concat(type);
-        return translate(key);
-    }
-
-    public boolean containsAccountHint(String account) {
-        String val = translateAccountHint(account, TITLE);
-        return !TextUtils.isEmpty(val);
-    }
-
     public String translateInteraction(Interaction interaction) {
-        String key = "interaction.".concat(interaction.getCode()).concat(".").concat(interaction.getReason());
+        String key = "interaction." + interaction.getCode() + "." + interaction.getReason();
         return translate(key);
+    }
+
+    public String getError(String key) {
+        return translate("error." + key);
+    }
+
+    public String getButtonLabel(String key) {
+        return translate("button." + key + ".label");
+    }
+    
+    public String getAccountLabel(String key) {
+        return translate("account." + key + ".label");
+    }
+
+    public String getAccountHint(String key, String type) {
+        return translate("account." + key + ".hint.where." + type);
+    }
+
+    public boolean containsAccountHint(String key) {
+        String val = getAccountHint(key, TITLE);
+        return !TextUtils.isEmpty(val);
     }
 
     public Properties getProperties() {

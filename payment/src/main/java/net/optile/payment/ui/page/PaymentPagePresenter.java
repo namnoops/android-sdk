@@ -333,7 +333,7 @@ final class PaymentPagePresenter {
     }
 
     private void showInteractionMessage(Interaction interaction) {
-        String msg = translateInteraction(interaction, null);
+        String msg = createInteractionMessage(interaction, null);
 
         if (!TextUtils.isEmpty(msg)) {
             showMessage(msg);
@@ -351,7 +351,7 @@ final class PaymentPagePresenter {
     }
 
     private void closeSessionWithCanceledCode(PaymentResult result) {
-        String msg = translateInteraction(result.getInteraction(), view.getStringRes(R.string.pmdialog_error_unknown));
+        String msg = createInteractionMessage(result.getInteraction(), view.getStringRes(R.string.pmdialog_error_unknown));
         view.setPaymentResult(PaymentUI.RESULT_CODE_CANCELED, result);
         closePageWithMessage(msg);
     }
@@ -427,7 +427,7 @@ final class PaymentPagePresenter {
         view.showDialog(dialog);
     }
 
-    private String translateInteraction(Interaction interaction, String defMessage) {
+    private String createInteractionMessage(Interaction interaction, String defMessage) {
 
         if (session == null || interaction == null) {
             return defMessage;
