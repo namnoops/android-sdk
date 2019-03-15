@@ -70,7 +70,7 @@ final class PaymentPagePresenter {
      */
     boolean onBackPressed() {
         if (service.isPerformingOperation()) {
-            view.showSnackbar(view.getStringRes(R.string.pmsnackbar_operation_interrupted));
+            view.showSnackbar(view.getStringRes(R.string.pmsend_interrupted));
             return true;
         }
         return false;

@@ -224,7 +224,7 @@ public final class PaymentPageActivity extends AppCompatActivity implements Paym
         if (show) {
 
             if (style == PaymentProgressView.SEND) {
-                initActionBar(getString(R.string.pmprogress_sendtitle), false);
+                initActionBar(getString(R.string.pmsend_title), false);
             }
             paymentList.setVisible(false);
             progress.setStyle(style);

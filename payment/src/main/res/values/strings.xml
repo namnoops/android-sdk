@@ -9,14 +9,13 @@
     <string name="pmlist_networkonly_header">Choose a method</string>
     <string name="pmlist_widget_date">%1$s / %2$s</string>
 
-    <string name="pmprogress_sendtitle">Payment processing…</string>
-    <string name="pmprogress_sendheader">Sending…</string>
-    <string name="pmprogress_sendinfo">Payment confirmation should take less than 30 seconds.</string>
-
+    <string name="pmsend_title">Payment processing…</string>
+    <string name="pmsend_header">Sending…</string>
+    <string name="pmsend_info">Payment confirmation should take less than 30 seconds.</string>
+    <string name="pmsend_interrupted">Please wait for the payment to process.</string>
+    
     <string name="pmdialog_error_connection">Please check your internet connection.</string>
     <string name="pmdialog_error_unknown">An error occurred while handling your payment.</string>
     <string name="pmdialog_cancel_button">Cancel</string>
     <string name="pmdialog_retry_button">Retry</string>
-
-    <string name="pmsnackbar_operation_interrupted">Please wait for the payment to process.</string>
 </resources>
